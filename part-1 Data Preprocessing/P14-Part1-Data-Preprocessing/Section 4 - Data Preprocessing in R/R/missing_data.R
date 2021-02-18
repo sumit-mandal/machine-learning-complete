@@ -11,4 +11,35 @@ dataset$Age = ifelse(is.na(dataset$Age),
 dataset$Salary = ifelse(is.na(dataset$Salary),
                         ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
                         dataset$Salary)
-                        
+
+
+#Encoding categorical data
+
+dataset$Country = factor(dataset$Country,
+                         levels = c('France','Spain','Germany'),
+                         labels = c(1,2,3)
+                         )
+
+dataset$Purchased = factor(dataset$Purchased,
+                           levels = c('Yes','No'),
+                           labels = c(1,0)
+                           )
+
+#splitting the dataset into the training set and test set
+#install.packages('caTools')
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Purchased,SplitRatio = 0.8) #splitting data into training and test set
+#in python we choose test set's percentage but in R we choose training set percentage
+#split returns true or false value when typed on console. True means observation goes in training set and false means it goes to test set
+
+#creating training and test set seperately
+training_set = subset(dataset, split  == TRUE)
+test_set = subset(dataset, split == FALSE)
+
+#feature Scaling
+training_set[, 2:3] = scale(training_set[,2:3])
+test_set[,2:3] = scale(test_set[,2:3])
+
+
+

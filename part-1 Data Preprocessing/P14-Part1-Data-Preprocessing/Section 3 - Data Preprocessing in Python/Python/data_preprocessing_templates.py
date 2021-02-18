@@ -17,3 +17,7 @@ imputer = imputer.fit(X[:, 1:3]) #used for fitting imputer object to matrix X
 X[:, 1:3] = imputer.transform(X[:, 1:3]) #X[:, 1:3] variable is used to take columns for missing data
 #imputer.transform(X[:, 1:3]) is method which is used to replace missing values with mean.
 print(X)
+
+
+#Encoding categorial data
+from sklearn.preprocessing import LabelEncoder
