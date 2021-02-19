@@ -18,3 +18,5 @@ X_train,X_test, y_train, y_test =  train_test_split(X, y, test_size = 1/3, rando
 
 #X_train is matrix of indepenndent variable and y_train is dependent variable factor for trainig set
 #X_test is matrix of indepenndent variable and y_test is dependent variable factor for test set
+
+#fitting Simple Linear Regression into the training set
