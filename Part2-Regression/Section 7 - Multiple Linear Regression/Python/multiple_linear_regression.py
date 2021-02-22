@@ -36,7 +36,7 @@ y_pred = regressor.predict(X_test)
 import statsmodels.formula.api as sm
 import statsmodels.api as sm
 X = np.append(arr = np.ones((50,1)).astype(int),values=X ,axis=1) 
-#we have added one in 0th column
+#we have filled our 0th column with
 
 X_opt = X[:,[0,1,2,3,4,5]]
 regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
