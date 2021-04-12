@@ -55,8 +55,8 @@ plt.show()
 #Visualising the test set
 from matplotlib.colors import ListedColormap
 X_set,y_set = X_test,y_test
-X1,X2 = np.meshgrid(np.arange(Start = X_set[:,0].min()-1,stop = X_set[:,0].max()+1,step=0.01),
-                    np.arange(Start = X_set[:,1].min()-1,stop = X_set[:,1].max+1,step=0.01)
+X1,X2 = np.meshgrid(np.arange(start = X_set[:,0].min()-1,stop = X_set[:,0].max()+1,step=0.01),
+                    np.arange(start = X_set[:,1].min()-1,stop = X_set[:,1].max()+1,step=0.01)
                     )
 plt.contourf(X1,X2,classifier.predict(np.array([X1.ravel(),X2.ravel()]).T).reshape(X1.shape),
              alpha=0.75,cmap=ListedColormap(('blue','black')))
@@ -64,3 +64,9 @@ plt.contourf(X1,X2,classifier.predict(np.array([X1.ravel(),X2.ravel()]).T).resha
 for i,j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set==j,0],X_set[y_set==j,1],
                 c=['red','green'][i],label=j)
+    
+plt.legend()
+plt.title('decision_tree(Test set)')
+plt.xlabel('Age')
+plt.ylabel('Estimated_salary')
+plt.show()
