@@ -35,6 +35,9 @@ plt.scatter(X[y_kmeans == 0, 0], X[y_kmeans == 0, 1], s = 100, c = 'red', label 
 #[y_kmeans == 0] meaning we want the observation that belongs to cluster 1 [y_kmeans == 0,0] meaning we want 1st column of our data X
 #X[y_kmeans == 0, 0] by doing this we gave x coordinates of all the observation points that belongs to cluster 1. 
 #X[y_kmeans == 0, 1] here by changing 0 to 1 our dataset corresponds to the second column of our data X that is the y coodinate
+
+
+
 plt.scatter(X[y_kmeans == 1, 0], X[y_kmeans == 1, 1], s = 100, c = 'blue', label = 'Cluster 2')
 plt.scatter(X[y_kmeans == 2, 0], X[y_kmeans == 2, 1], s = 100, c = 'green', label = 'Cluster 3')
 plt.scatter(X[y_kmeans == 3, 0], X[y_kmeans == 3, 1], s = 100, c = 'cyan', label = 'Cluster 4')
