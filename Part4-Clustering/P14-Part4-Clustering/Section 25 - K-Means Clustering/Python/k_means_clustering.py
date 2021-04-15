@@ -32,6 +32,11 @@ y_kmeans = kmeans.fit_predict(X)
 
 # Visualising the clusters
 plt.scatter(X[y_kmeans == 0, 0], X[y_kmeans == 0, 1], s = 100, c = 'red', label = 'Cluster 1')
+
+# That's a filter. y_kmeans == 0 selects those elements where y_kmeans[i] is equal to 0. 
+# X[y_kmeans == 0, 0] selects the elements of X where the corresponding y_kmeans value is 
+# 0 and the second dimension is 0
+
 #[y_kmeans == 0] meaning we want the observation that belongs to cluster 1 [y_kmeans == 0,0] meaning we want 1st column of our data X
 #X[y_kmeans == 0, 0] by doing this we gave x coordinates of all the observation points that belongs to cluster 1. 
 #X[y_kmeans == 0, 1] here by changing 0 to 1 our dataset corresponds to the second column of our data X that is the y coodinate
