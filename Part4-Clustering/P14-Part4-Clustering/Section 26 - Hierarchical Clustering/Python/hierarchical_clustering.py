@@ -29,11 +29,14 @@ plt.scatter(X[y_hc == 0,0],X[y_hc == 0,1],s=100,c = 'red' ,label='Careful')
 # y_hc == 0 selects those elements where y_hc[i] is equal to 0. 
 # X[y_hc == 0, 0] selects the elements of X where the corresponding y_kmeans value is
 # 0 and the second dimension is 0.
+
+# X[y_hc ==1,0] here 0 means model is in x plain X[y_hc == 0,1] means model is in y-plain
+
 plt.scatter(X[y_hc ==1,0],X[y_hc == 1,1],s=100,c='blue',label='Standard')
 plt.scatter(X[y_hc ==2,0],X[y_hc==2,1],s=100,c='green',label='Target')
 plt.scatter(X[y_hc == 3,0],X[y_hc==3,1],s=100,c='cyan',label='careless')
 plt.scatter(X[y_hc == 4,0],X[y_hc==4,1],s=100,c='magenta',label='sensible')
-plt.tilte('Clusters of customers')
+plt.title('Clusters of customers')
 plt.xlabel('Annual Income (k$)')
 plt.ylabel('Spending Score(1-100)')
 plt.legend()
